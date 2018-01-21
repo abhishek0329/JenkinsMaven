@@ -1,0 +1,10 @@
+---
+   host: servers
+   become: yes
+   become_method: sudo
+   become_user: root
+   task
+    -name: installing httpd
+     yum: name=httpd state=installed
+    -name: httpd is running and enabled
+     service: name=httpd status=enabled
